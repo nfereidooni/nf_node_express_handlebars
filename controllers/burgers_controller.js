@@ -4,13 +4,19 @@ const router = express.Router();
 
 router.get("/", function(req, res) {
 
+// enter code
+
 });
 
 router.post("/", function(req, res) {
 
+// enter code
+
 });
 
 router.put("/:id", function(req, res) {
+
+// enter code
 
 });
 
