@@ -3,10 +3,14 @@ const burger = require("../models/burger.js");
 const router = express.Router();
 
 router.get("/", function(req, res) {
-
-// enter code
-
+    burger.selectAll(function(data) {
+        const hbObject = {
+            burgers: data
+        };
+        res.render('index', hbObject);
+    });
 });
+
 
 router.post("/", function(req, res) {
 

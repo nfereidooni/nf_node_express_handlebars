@@ -9,7 +9,7 @@ var app = express();
 
 app.use( express.static('public') )
 
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ exten  ed: true }))
 
 app.use(express.json())
 
