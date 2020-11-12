@@ -1,23 +1,19 @@
 const orm = require("../config/orm.js");
+const ORM = new orm();
 
-const burger = {
+class burger {
+    constructor() {}
 
-    selectAll: function(cb) {
-        orm.selectAll("burgers", function(res) {
-            cb(res);
-        });
-    },
+    showBurgers() {
+        return ORM.selectAll()
+    }
 
-    insertOne: function(cols, vals, cb) {
-        orm.insertOne("burgers", cols, vals, function(res) {
-            cb(res);
-        });
-    },
+    devourBurger(id, devoured) {
+        return ORM.updateOne(id, devoured)
+    }
 
-    updateOne: function(objColVals, condition, cb) {
-        orm.updateOne("burgers", objColVals, condition, function(res) {
-            cb(res);
-        });
+    submitBurger(burgerName) {
+        return ORM.insertOne(burgerName)
     }
 };
 
