@@ -1,20 +1,23 @@
-const orm = require("../config/orm.js");
-const ORM = new orm();
+const ORM = require("../config/orm.js");
+const orm = new ORM();
 
 class burger {
+
     constructor() {}
 
-    showBurgers() {
-        return ORM.selectAll()
+    listBurgers() {
+        return orm.selectAll()
     }
 
+    submitBurger(burger_name) {
+        return orm.insertOne(burger_name)
+    }
+    
     devourBurger(id, devoured) {
-        return ORM.updateOne(id, devoured)
+        return orm.updateOne(id, devoured)
     }
 
-    submitBurger(burgerName) {
-        return ORM.insertOne(burgerName)
-    }
+
 };
 
 module.exports = burger;

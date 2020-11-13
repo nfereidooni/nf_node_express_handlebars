@@ -1,11 +1,11 @@
-INSERT INTO burgers (burger_name)
-VALUES ("Portabello & Swiss Cheeseburger");
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("Portabello & Swiss Cheeseburger", true);
 
-INSERT INTO burgers (burger_name)
-VALUES ("Avocado Bacon Ranch Burger");
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("Avocado Bacon Ranch Burger", false);
 
-INSERT INTO burgers (burger_name)
-VALUES ("Teriyaki Salmon Burger");
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("Teriyaki Salmon Burger", false);
 
-INSERT INTO burgers (burger_name)
-VALUES ("Beyond Meat Burger");
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("Beyond Meat Burger", false);

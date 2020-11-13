@@ -1,23 +1,38 @@
 const express = require("express");
-const burger = require("../models/burger.js");
+const exphbs = require("express-handlebars");
+const PORT = process.env.PORT || 3000;
 const router = express.Router();
+const path = require("path");
+const Burger = new (require('../models/burger.js'))();
 
 router.get("/", async function(req, res) {
-    const result = await burger.showBurgers();
-    res.render("index", { burgers: result })
+    try {
+    const result = await Burger.listBurgers();  
+    res.render("index", { burgers: result });
+    } catch (error) {
+        console.error(error)
+    }
 });
 
-router.post("/", async function(req, res) {
-    burgerName = req.body.burger_name
-    const result = await burger.submitBurger(burgerName)
-    res.send({result})
+router.post("/api/burgers",async function(req,res){
+    try {
+    const burgerName = req.body.burger_name;
+    const result = await Burger.submitBurger(burgerName);
+    res.send({result});
+    } catch (error) {
+        console.error(error)
+    }
 });
 
-router.put("/:id", async function(req, res) {
-    const id = req.params.id
-    const devoured = req.body.devoured
-    const result = await burger.devourBurger(id, devoured)
-    res.json(result)
+router.put("/api/burgers/:id", async function(req,res){
+    try {
+    const burgerID = req.params.id;
+    const devoured = req.body.devoured;
+    const result = await Burger.devourBurger(burgerID, devoured);
+    res.json(result);
+    } catch (error) {
+        console.error(error)
+    }
 });
 
 module.exports = router;

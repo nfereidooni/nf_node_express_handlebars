@@ -1,30 +1,32 @@
 const db = require( './connection.js' );
 
-class orm {
+class ORM {
 
-  constructor(){}
+  constructor() {}
+
+  selectOne(id) {
+    const sql = `SELECT * FROM burgers `+ (id ? `WHERE id = ?` : '')
+    return db.query(sql, [id])
+  }
 
   selectAll() {
-    const query = `SELECT * FROM burgers `+ (id ? `WHERE id = ?` : '' )
-    return db.query(query)
+    const sql = `SELECT * FROM burgers`
+    return db.query(sql)
   }
 
-  insertOne(burgerName) {
-    const query = `INSERT INTO burgers (burger_name,devoured) VALUES (?,?)`
-    return db.query(query, [burgerName, false])
-  }
-
-  updateOne(id, devoured) {
-    const query = `INSERT INTO burgers(burger_name,devoured) WHERE id = ?`
-    return db.query(query, [devoured ? 1 : 0, id])
-  }
-
-  closeORM(){
-    return db.close()
-  }
-
+  insertOne(burger_name) {
+    const sql = `INSERT INTO burgers(burger_name, devoured) VALUES (?,?)`
+    return db.query(sql, [burger_name, false])
 }
 
+  updateOne(id, devoured) {
+    const sql = `UPDATE burgers SET devoured = ? WHERE id = ?`;
+    return db.query(sql, [devoured ? 1 : 0, id])
+}
 
+  // closeORM(){
+  //   return db.close()
+  // }
+}
 
-module.exports = orm
+module.exports = ORM
