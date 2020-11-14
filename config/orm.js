@@ -24,9 +24,6 @@ class ORM {
     return db.query(sql, [devoured ? 1 : 0, id])
 }
 
-  // closeORM(){
-  //   return db.close()
-  // }
 }
 
 module.exports = ORM

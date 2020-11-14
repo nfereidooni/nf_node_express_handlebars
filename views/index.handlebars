@@ -7,12 +7,7 @@
         <ul class="list-group">
         {{#each burgers}}
           {{#unless this.devoured}}
-            {{!-- <div>
-              <form action="/burger/{{this.id}}" method="PUT">
-                <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
-              </form>
-            </div> --}}
-            <div class="list-group-item eatBurger">{{this.burger_name}} <button burgerID="{{this.id}}" class="btn btn-sm btn-danger float-right eatBurger">Eat</button></div>
+            <div class="list-group-item eatBurger">{{this.burger_name}} <button id="{{this.id}}" class="btn btn-sm btn-danger float-right eatBurger">Eat</button></div>
           {{/unless}}
         {{/each}}
         </ul>
@@ -35,10 +30,6 @@
 
 <div class="row text-center justify-content-center mb-5">
   <div class="col-12 justify-content-center text-cemter">
-    {{!-- <form action="/" method="POST">
-      <input type="text" id="burgerName" name="burger_name" placeholder="Enter your burger name">
-      <button type="submit" class="addBurgerBtn">Submit</button>
-    </form> --}}
     <form class="create-form justify-content-center text-cemter">
     <div class="mb-2 justify-content-center text-cemter ml-5 mr-5">
         <input type="text" class="form-control w-50 justify-content-center text-cemter" id="burger_name" name="burger_name" placeholder="Enter your burger name">

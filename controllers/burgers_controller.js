@@ -27,6 +27,7 @@ router.post("/api/burgers",async function(req,res){
 router.put("/api/burgers/:id", async function(req,res){
     try {
     const burgerID = req.params.id;
+    //console.log(burgerID);
     const devoured = req.body.devoured;
     const result = await Burger.devourBurger(burgerID, devoured);
     res.json(result);

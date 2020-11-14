@@ -2,17 +2,13 @@ $(document).ready( function(){
 
     $(".eatBurger").on("click", function(event) {
 
-      // console.log("testing 1 2 3")
-
       event.preventDefault();
   
       let updatedBurger = {
         devoured: true
       };
   
-      let id = $(this).data("id");
-
-      $.ajax("/api/burgers/" + id, {
+      $.ajax("/api/burgers/" + this.id, {
         type: "PUT",
         data: updatedBurger
       }).then(
