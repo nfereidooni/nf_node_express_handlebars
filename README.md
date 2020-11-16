@@ -19,7 +19,7 @@
 ## Usage:
     This project can be used as a basic template for a to-do list or shopping cart-like application.
 ## Heroku Link
-
+    https://infinite-scrubland-34308.herokuapp.com/
 ## Credits:
     Fil & Daniel, my instructors
 ## License:
