@@ -1,11 +1,10 @@
-
 # Node Express Handlebars - Eat-Da-Burger App
+
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contribution](#contribution)
-- [Test](#test)
+- [Heroku](#heroku)
 - [Credits](#credits)
 - [License](#license)
 - [Questions](#questions)
@@ -18,7 +17,7 @@
     The app can be viewed via the Heroku link. If you would like to run it locally on your system, create the database in mySQL using the schema and seeds file. Then run `npm install` in your command line, followed by `node server.js`.
 ## Usage:
     This project can be used as a basic template for a to-do list or shopping cart-like application.
-## Heroku Link
+## Heroku
     https://infinite-scrubland-34308.herokuapp.com/
 ## Credits:
     Fil & Daniel, my instructors
