@@ -18,7 +18,7 @@
         <ul class="list-group">
         {{#each burgers}}
           {{#if this.devoured}}
-           <div class="burgerEaten">{{this.burger_name}} <button id="{{this.id}}" class="btn btn-sm btn-danger float-right deleteBurger">Delete</button></div>
+           <div class="list-group-item eatBurger">{{this.burger_name}} <button id="{{this.id}}" class="btn btn-sm btn-danger float-right deleteBurger">Delete</button></div>
           {{/if}}
         {{/each}}
         </ul>
