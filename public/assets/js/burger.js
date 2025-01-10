@@ -40,4 +40,14 @@ $(document).ready( function(){
         }
       );
     });
-  });
+
+    $(".deleteBurger").on("click", function(event) {
+      event.preventDefault();
+      $.ajax("/api/burgers/" + this.id, {
+        type: "DELETE"
+      }).then(function() {
+        console.log("Delete burger:", this.id);
+        location.assign("/");
+      });
+    });
+});

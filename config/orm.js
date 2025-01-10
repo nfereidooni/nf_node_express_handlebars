@@ -1,7 +1,6 @@
 const db = require( './connection.js' );
 
 class ORM {
-
   constructor() {}
 
   selectOne(id) {
@@ -23,7 +22,10 @@ class ORM {
     const sql = `UPDATE burgers SET devoured = ? WHERE id = ?`;
     return db.query(sql, [devoured ? 1 : 0, id])
 }
-
+  deleteOne(id) {
+    const sql = `DELETE FROM burgers WHERE id = ?`;
+    return db.query(sql, [id]);
+  }
 }
 
 module.exports = ORM

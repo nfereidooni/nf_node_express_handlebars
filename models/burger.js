@@ -16,6 +16,10 @@ class burger {
     devourBurger(id, devoured) {
         return orm.updateOne(id, devoured)
     }
+
+    deleteBurger(id) {
+        return orm.deleteOne(id);
+    }
 };
 
 module.exports = burger;

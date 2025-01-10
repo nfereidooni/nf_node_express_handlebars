@@ -36,4 +36,19 @@ router.put("/api/burgers/:id", async function(req,res){
     }
 });
 
+router.delete("/api/burgers/:id", async function(req, res) {
+    try {
+      const burgerID = req.params.id;
+      const result = await Burger.deleteBurger(burgerID);
+  
+      if (result.affectedRows === 0) {
+        return res.status(404).end();
+      }
+      res.status(200).end();
+    } catch (error) {
+      console.error(error);
+      res.status(500).json(error);
+    }
+});
+
 module.exports = router;
